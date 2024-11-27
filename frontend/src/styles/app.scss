@@ -1,4 +1,4 @@
-@import "mixin";
+@use "mixin";
 
 :root {
     font-family: Inter, system-ui, Avenir, Halvetica, Arial, sans-serif;
@@ -30,7 +30,7 @@ a {
 }
 
 .adminContainer {
-    @include grid(1fr 4fr, 2rem);
+    @include mixin.grid(1fr 4fr, 2rem);
     height: 100vh;
     background-color: rgb(244, 244, 244);
     > aside {
@@ -43,5 +43,28 @@ a {
         &::-webkit-scrollbar {
             display: none;
         }
+        >div {
+            margin: 2rem 1rem;
+            >h5 {
+                @include mixin.heading(2px);
+                opacity: 0.8;
+                margin: 1rem 0;
+            }
+            >ul {
+                @include mixin.flex(column, unset, unset, 0.5rem);
+                list-style: none;
+                padding: 0.5rem 1rem;
+            }
+        }
     }
 }
+
+.li-wrapper {
+    padding: 0.5rem 1rem;
+    // background-color: white;
+    border-radius: 10px;
+}
+
+// .li-wrapper:hover {
+//     background-color: rgba(145, 203, 241, 0.692);
+// }
