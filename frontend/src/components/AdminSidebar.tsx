@@ -1,8 +1,9 @@
 import React from "react"
 import { IconType } from "react-icons"
 import { AiFillFileText } from "react-icons/ai"
+import { FaChartBar, FaChartLine, FaChartPie, FaGamepad, FaStopwatch } from "react-icons/fa"
 import { IoIosPeople } from "react-icons/io"
-import { RiDashboardFill, RiShoppingBag3Fill } from "react-icons/ri"
+import { RiCoupon3Fill, RiDashboardFill, RiShoppingBag3Fill } from "react-icons/ri"
 import { Link, Location, useLocation } from "react-router-dom"
 
 const AdminSidebar = () => {
@@ -60,31 +61,24 @@ const DivTwo = ({location}:{location:Location}) => (
         <h5>Charts</h5>
         <ul>
             <Li
-              url="/admin/dashboard" 
-              text="Dashboard" 
+              url="/admin/chart/bar" 
+              text="Bar" 
               location={location} 
-              Icon={RiDashboardFill}
+              Icon={FaChartBar}
               classname="li-wrapper">
             </Li>
             <Li 
-              url="/admin/products" 
-              text="Product" 
+              url="/admin/chart/pie" 
+              text="Pie" 
               location={location} 
-              Icon={RiShoppingBag3Fill}
+              Icon={FaChartPie}
               classname="li-wrapper">
             </Li>
             <Li 
-              url="/admin/customers" 
-              text="Customer" 
+              url="/admin/chart/line" 
+              text="Line" 
               location={location} 
-              Icon={IoIosPeople}
-              classname="li-wrapper">
-            </Li>
-            <Li 
-              url="/admin/transaction" 
-              text="Transaction" 
-              location={location} 
-              Icon={AiFillFileText}
+              Icon={FaChartLine}
               classname="li-wrapper">
             </Li>
         </ul>
@@ -93,36 +87,29 @@ const DivTwo = ({location}:{location:Location}) => (
 
 const DivThree = ({location}:{location:Location}) => (
   <div>
-        <h5>Charts</h5>
+        <h5>Apps</h5>
         <ul>
             <Li
-              url="/admin/dashboard" 
-              text="Dashboard" 
+              url="/admin/app/stopwatch" 
+              text="Stopwatch" 
               location={location} 
-              Icon={RiDashboardFill}
+              Icon={FaStopwatch}
               classname="li-wrapper">
             </Li>
             <Li 
-              url="/admin/products" 
-              text="Product" 
+              url="/admin/app/coupon" 
+              text="Coupon" 
               location={location} 
-              Icon={RiShoppingBag3Fill}
+              Icon={RiCoupon3Fill}
               classname="li-wrapper">
             </Li>
             <Li 
-              url="/admin/customers" 
-              text="Customer" 
+              url="/admin/app/toss" 
+              text="Toss" 
               location={location} 
-              Icon={IoIosPeople}
+              Icon={FaGamepad}
               classname="li-wrapper">
-            </Li>
-            <Li 
-              url="/admin/transaction" 
-              text="Transaction" 
-              location={location} 
-              Icon={AiFillFileText}
-              classname="li-wrapper">
-            </Li>
+            </Li>  
         </ul>
        </div>
 )
