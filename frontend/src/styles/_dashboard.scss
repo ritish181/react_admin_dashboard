@@ -35,7 +35,7 @@
 .widget {
     border-radius: 1rem;
     background-color: white;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     margin-top: 2rem;
     border: 2px solid rgb(211, 208, 208);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.132);
@@ -57,5 +57,127 @@
     }
     >span {
         @include flex(row, unset, center ,0.2rem);
+    }
+}
+
+.widgetCircle {
+    position: relative;
+    @include square(5rem);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: aquamarine;
+    &::before {
+        content:  "";
+        position: absolute;
+        @include square(4.2rem);
+        background-color: white;
+        border-radius: 100%;
+    }
+
+    // animation: rotateGradient 5.8s linear infinite;
+    // @keyframes rotateGradient {
+    //     from {
+    //         transform: rotate(0deg);
+    //     }
+    //     to {
+    //         transform: rotate(360deg);
+    //     }
+    // }
+    
+    span {
+        position: relative;
+    }
+}
+
+
+.graphContainer {
+    @include flex(row, space-between, stretch, 2rem);
+    height: 60vh;
+    text-align: center;
+    >.revenueChart {
+        background-color: white;
+        border-radius: 0.5rem;
+        width: 80%;
+        > h3 {
+            @include heading;
+            margin: 1rem 0 2rem 0.25rem;
+            text-align: center;
+        }
+    }
+
+    >.dashboardCategories {
+        background-color: white;
+        border-radius: 0.5rem;
+        width: 20%;     
+        // margin-right: auto; 
+        > h3 {
+            @include heading;
+            margin: 1rem 0 2rem 0.25rem;
+            text-align: center;
+        }  
+        @include flex(column, center ,unset, 0);
+        padding-bottom: 2rem;
+
+        > div {
+            overflow-y: auto;
+            padding-left: 0.5rem;
+        }
+    }
+
+}
+
+.categoryItem {
+    margin: 1rem auto;
+    width: 90%;
+    @include flex(row, space-between);
+    padding-right:0.5rem ;
+    > h5 {
+        letter-spacing: 1px;
+        font-weight: 300 ;
+    }
+    > div {
+        // margin-left: auto;
+        width: 6rem;
+        height: 0.5rem;
+        background-color: rgb(211, 208, 208);
+        border-radius: 0.8rem;
+        flex: none;
+        > div {
+            border-radius: 0.8rem;
+            height: 100%;
+        }
+    }
+    > span {
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+}
+
+.transactionContainer {
+    margin-top: 1rem;
+    @include flex(row, space-between, stretch, 2rem);
+    height: 50vh;
+    > .doughnutChart {
+        @include flex(column, unset ,center, 0);
+        border-radius: 0.5rem;
+        width: 30%;
+        background-color: white;
+        > h3 {
+            @include heading;
+            margin: 1rem 0 2rem 0.25rem;
+            text-align: center;
+        }
+       
+    }
+    > .tableChart {
+        border-radius: 0.5rem;
+        width: 70%;
+        background-color: white;
+        > h3 {
+            @include heading;
+            margin: 1rem 0 2rem 0.25rem;
+            text-align: center;
+        }
     }
 }
